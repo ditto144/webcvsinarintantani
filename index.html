@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Sinar Intan Sidayu (SIS) - Produsen & Supplier Beras Premium Super</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           RESET & CSS VARIABLES (ROYAL BLUE 3D)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-body: #090D16;
+            --bg-card: rgba(18, 26, 43, 0.75);
+            --bg-card-hover: rgba(28, 40, 65, 0.85);
+            --primary-blue: #2563EB;
+            --accent-cyan: #38BDF8;
+            --accent-glow: rgba(56, 189, 248, 0.35);
+            --navy-dark: #0B132B;
+            --text-light: #F8FAFC;
+            --text-sub: #94A3B8;
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --shadow-3d: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(37, 99, 235, 0.2);
+            --shadow-hover: 0 30px 60px -20px rgba(56, 189, 248, 0.4), 0 0 30px rgba(37, 99, 235, 0.4);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* ==========================================
+           HEADER & NAVIGASI GLASSMORPHISM
+           ========================================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .navbar {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 2rem;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* BINGKAI LOGO TRANSPARAN MURNI */
+        .logo-img-wrapper {
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+
+        .logo-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            /* Efek pendaran cyan lembut tanpa mengubah warna asli logo transparan kamu */
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.35));
+        }
+
+        .logo:hover .logo-img-wrapper {
+            transform: scale(1.10) rotate(3deg);
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px;
+            border-radius: 16px;
+            border: 1px solid var(--border-glass);
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-blue), #1D4ED8);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* ==========================================
+           TAB CONTENT CONTROLLER
+           ========================================== */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* ==========================================
+           HERO BANNER
+           ========================================== */
+        .hero {
+            position: relative;
+            padding: 125px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(9, 13, 22, 0.35) 0%, rgba(9, 13, 22, 0.75) 100%),
+                        url('sampul-pabrik.png') center/cover no-repeat;
+            border-radius: 30px;
+            border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-3d);
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.18) 0%, rgba(9, 13, 22, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(9, 13, 22, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 40%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #E2E8F0;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-3d {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: #fff;
+            padding: 16px 38px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px var(--accent-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-3d:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.5);
+        }
+
+        /* ==========================================
+           GRID & CARD 3D EFEK MELAYANG
+           ========================================== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .profile-card-3d {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-3d);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .profile-card-3d:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .img-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .profile-card-3d:hover .img-container img {
+            transform: scale(1.05);
+        }
+
+        .profile-info h4 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .profile-info p {
+            color: #CBD5E1;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* FEATURE BOXES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            padding: 30px;
+            border-radius: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.2));
+            border: 1px solid var(--accent-cyan);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+        }
+
+        .icon-box svg {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+
+        .feature-card h5 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           TABEL KATALOG STOK & HARGA 3D
+           ========================================== */
+        .table-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 35px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-3d);
+            overflow-x: auto;
+        }
+
+        .table-header-tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 350px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            padding: 12px 20px 12px 45px;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            fill: var(--text-sub);
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            min-width: 700px;
+        }
+
+        .custom-table th {
+            color: var(--accent-cyan);
+            text-align: left;
+            padding: 12px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .custom-table tbody tr {
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .custom-table tbody tr:hover {
+            background: rgba(56, 189, 248, 0.1);
+            transform: scale(1.01);
+        }
+
+        .custom-table td {
+            padding: 18px 20px;
+            color: #E2E8F0;
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .custom-table td:first-child {
+            border-left: 1px solid var(--border-glass);
+            border-radius: 16px 0 0 16px;
+            font-weight: bold;
+        }
+
+        .custom-table td:last-child {
+            border-right: 1px solid var(--border-glass);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .badge-ready {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ADE80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .badge-limited {
+            background: rgba(234, 179, 8, 0.15);
+            color: #FACC15;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .btn-order-sm {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-order-sm:hover {
+            box-shadow: 0 4px 12px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           LEGALITAS & SERTIFIKASI
+           ========================================== */
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .legal-card-pro {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 35px 30px;
+            backdrop-filter: blur(16px);
+            box-shadow: var(--shadow-3d);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-card-pro:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-cyan);
+        }
+
+        .legal-top {
+            margin-bottom: 25px;
+        }
+
+        .legal-badge-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .legal-icon-pill {
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pill-nib { background: linear-gradient(135deg, #1E40AF, #3B82F6); color: #fff; border: 1px solid var(--accent-cyan); }
+        .pill-halal { background: linear-gradient(135deg, #065F46, #10B981); color: #fff; border: 1px solid #34D399; }
+        .pill-psat { background: linear-gradient(135deg, #B45309, #F59E0B); color: #fff; border: 1px solid #FBBF24; }
+
+        .legal-status-tag {
+            background: rgba(34, 197, 94, 0.12);
+            color: #4ADE80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .legal-card-pro h4 {
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .legal-sub {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .legal-card-pro p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .legal-footer-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px dashed rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            padding: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .legal-footer-box span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .legal-footer-box strong {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--accent-cyan);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           KONTAK 3D CARDS & OPERASIONAL
+           ========================================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon-box {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-3d);
+        }
+
+        .contact-icon-box svg {
+            width: 36px;
+            height: 36px;
+            fill: #fff;
+        }
+
+        .wa-bg { background: linear-gradient(135deg, #25D366, #128C7E); }
+        .ig-bg { background: linear-gradient(135deg, #E1306C, #C13584); }
+        .gmail-bg { background: linear-gradient(135deg, #EA4335, #B23121); }
+        .map-bg { background: linear-gradient(135deg, #3B82F6, #1E40AF); }
+
+        .btn-contact {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-wa { background: linear-gradient(135deg, #25D366, #128C7E); }
+        .btn-ig { background: linear-gradient(135deg, #E1306C, #C13584); }
+        .btn-gmail { background: linear-gradient(135deg, #EA4335, #B23121); }
+        .btn-map { background: linear-gradient(135deg, #3B82F6, #1E40AF); }
+
+        .btn-contact:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background: rgba(9, 13, 22, 0.95);
+            border-top: 1px solid var(--border-glass);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 900px) {
+            .profile-card-3d { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 2.2rem; }
+            .navbar { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="switchTab('profil')">
+                <div class="logo-img-wrapper">
+                    <!-- File logo-sis.png transparan murni -->
+                    <img src="logo-sis.png" alt="Logo SIS Resmi" onerror="this.src='logo-sis.jpg'">
+                </div>
+                <div class="logo-text">
+                    <h1>CV. SINAR INTAN SIDAYU</h1>
+                    <span>Produsen Beras Premium Quality</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <button class="nav-btn active" id="btn-profil" onclick="switchTab('profil')">
+                        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                        Profil
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-btn" id="btn-stok" onclick="switchTab('stok')">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        Stok & Harga
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-btn" id="btn-legalitas" onclick="switchTab('legalitas')">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        Legalitas
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-btn" id="btn-kontak" onclick="switchTab('kontak')">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Kontak
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TAB 1: PROFIL PERUSAHAAN -->
+    <div id="tab-profil" class="tab-content active">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="badge-hero">🌾 Beras Super Quality Indonesia</div>
+                    <h2>Keharuman & Kemurnian Beras Premium Terbaik</h2>
+                    <p>CV Sinar Intan Sidayu (SIS) menghadirkan beras lokal berkualitas super yang diproses secara higienis, mulus, dan pulen untuk kebutuhan keluarga maupun industri.</p>
+                    <button class="btn-3d" onclick="switchTab('stok')">
+                        Lihat Stok & Harga
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </section>
+
+            <div class="section-title">
+                <h3>Tentang CV Sinar Intan Sidayu</h3>
+                <p>Komitmen Terdepan Menghadirkan Kualitas Pangan Terbaik</p>
+            </div>
+
+            <div class="profile-card-3d">
+                <div class="img-container">
+                    <img src="beras.png" alt="Beras Premium Super CV SIS" onerror="this.src='https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80'">
+                </div>
+                <div class="profile-info">
+                    <h4>Profil Perusahaan</h4>
+                    <p><strong>CV Sinar Intan Sidayu (SIS)</strong> adalah perusahaan penyedia dan produsen beras premium berkualitas tinggi yang berpusat di Kabupaten Serang, Banten. Kami mendedikasikan diri untuk memproduksi beras dengan standar mutu tertinggi.</p>
+                    <p>Menggunakan gabah pilihan langsung dari hasil panen petani lokal serta diproses menggunakan mesin modern otomatis, menghasilkan beras berbulir utuh, putih alami tanpa pemutih, dan menghasilkan nasi yang sangat pulen.</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h5>100% Beras Alami</h5>
+                    <p>Tanpa pengawet, tanpa pemutih buatan, dan tanpa bahan kimia berbahaya. Sehat dan terjamin murni.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
+                    <h5>Penggilingan Modern</h5>
+                    <p>Mesin pemoles modern memastikan bulir beras tetap utuh, bersih dari kotoran, dan mengkilap alami.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+                    </div>
+                    <h5>Distribusi Siap Kirim</h5>
+                    <p>Armada logistik terpadu melayani pengiriman grosir, eceran, supermarket, dan pasokan industri.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: STOK DAN HARGA -->
+    <div id="tab-stok" class="tab-content">
+        <div class="container">
+            <div class="section-title">
+                <h3>Katalog Stok & Harga Beras</h3>
+                <p>Informasi Ketersediaan Barang & Harga Resmi CV Sinar Intan Sidayu</p>
+            </div>
+
+            <div class="table-card">
+                <div class="table-header-tools">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari beras...">
+                    </div>
+                </div>
+
+                <table class="custom-table" id="stockTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Produk</th>
+                            <th>Ukuran</th>
+                            <th>Kategori / Rasa</th>
+                            <th>Harga / Sak</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><strong>Beras SIS Super Head</strong></td>
+                            <td>5 Kg</td>
+                            <td>Premium Super (Pulen)</td>
+                            <td><strong style="color:var(--accent-cyan)">Rp 72.000</strong></td>
+                            <td><span class="status-badge badge-ready">● Ready</span></td>
+                            <td><a href="https://wa.me/6285173100449?text=Saya%20mau%20pesan%20Beras%20SIS%20Super%20Head%205kg" target="_blank" class="btn-order-sm">Pesan WA</a></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><strong>Beras SIS Super Head</strong></td>
+                            <td>10 Kg</td>
+                            <td>Premium Super (Pulen)</td>
+                            <td><strong style="color:var(--accent-cyan)">Rp 140.000</strong></td>
+                            <td><span class="status-badge badge-ready">● Ready</span></td>
+                            <td><a href="https://wa.me/6285173100449?text=Saya%20mau%20pesan%20Beras%20SIS%20Super%20Head%2010kg" target="_blank" class="btn-order-sm">Pesan WA</a></td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><strong>Beras SIS Premium Intan</strong></td>
+                            <td>25 Kg</td>
+                            <td>Super Quality (Grosir)</td>
+                            <td><strong style="color:var(--accent-cyan)">Rp 345.000</strong></td>
+                            <td><span class="status-badge badge-ready">● Ready</span></td>
+                            <td><a href="https://wa.me/6285173100449?text=Saya%20mau%20pesan%20Beras%20SIS%20Premium%20Intan%2025kg" target="_blank" class="btn-order-sm">Pesan WA</a></td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><strong>Beras Pandan Wangi SIS</strong></td>
+                            <td>5 Kg</td>
+                            <td>Special Aromatik</td>
+                            <td><strong style="color:var(--accent-cyan)">Rp 85.000</strong></td>
+                            <td><span class="status-badge badge-limited">▲ Terbatas</span></td>
+                            <td><a href="https://wa.me/6285173100449?text=Saya%20mau%20pesan%20Beras%20Pandan%20Wangi%205kg" target="_blank" class="btn-order-sm">Pesan WA</a></td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><strong>Beras Merah Organik SIS</strong></td>
+                            <td>2 Kg</td>
+                            <td>Kesehatan Super</td>
+                            <td><strong style="color:var(--accent-cyan)">Rp 45.000</strong></td>
+                            <td><span class="status-badge badge-ready">● Ready</span></td>
+                            <td><a href="https://wa.me/6285173100449?text=Saya%20mau%20pesan%20Beras%20Merah%20Organik%202kg" target="_blank" class="btn-order-sm">Pesan WA</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: LEGALITAS -->
+    <div id="tab-legalitas" class="tab-content">
+        <div class="container">
+            <div class="section-title">
+                <h3>Legalitas & Sertifikasi Resmi</h3>
+                <p>Jaminan Kepatuhan Hukum dan Standar Mutu Beras Terdaftar</p>
+            </div>
+
+            <div class="legal-grid">
+                <div class="legal-card-pro">
+                    <div class="legal-top">
+                        <div class="legal-badge-header">
+                            <div class="legal-icon-pill pill-nib">NIB</div>
+                            <div class="legal-status-tag">✓ Terverifikasi</div>
+                        </div>
+                        <h4>Nomor Induk Berusaha</h4>
+                        <div class="legal-sub">Kementerian Investasi / BKPM</div>
+                        <p>Izin usaha resmi operasional industri penggilingan dan perdagangan beras skala nasional.</p>
+                    </div>
+                    <div class="legal-footer-box">
+                        <span>Nomor Registrasi:</span>
+                        <strong>1234000567891</strong>
+                    </div>
+                </div>
+
+                <div class="legal-card-pro">
+                    <div class="legal-top">
+                        <div class="legal-badge-header">
+                            <div class="legal-icon-pill pill-halal">HALAL</div>
+                            <div class="legal-status-tag">✓ Terdaftar</div>
+                        </div>
+                        <h4>Sertifikat Halal Indonesia</h4>
+                        <div class="legal-sub">BPJPH & Majelis Ulama Indonesia</div>
+                        <p>Menjamin seluruh rantai pasok dan fasilitas pengolahan beras diproses secara higienis & halal.</p>
+                    </div>
+                    <div class="legal-footer-box">
+                        <span>Nomor Sertifikat:</span>
+                        <strong>ID3611000123456</strong>
+                    </div>
+                </div>
+
+                <div class="legal-card-pro">
+                    <div class="legal-top">
+                        <div class="legal-badge-header">
+                            <div class="legal-icon-pill pill-psat">PSAT</div>
+                            <div class="legal-status-tag">✓ Izin Edar</div>
+                        </div>
+                        <h4>Izin Edar PSAT-PD</h4>
+                        <div class="legal-sub">Dinas Ketahanan Pangan</div>
+                        <p>Sertifikasi Keamanan Pangan Segar Asal Tumbuhan menjamin beras bebas bahan kimia berbahaya.</p>
+                    </div>
+                    <div class="legal-footer-box">
+                        <span>Nomor Registrasi:</span>
+                        <strong>36.04-A.I.000-01-00022</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: KONTAK -->
+    <div id="tab-kontak" class="tab-content">
+        <div class="container">
+            <div class="section-title">
+                <h3>Hubungi Kami</h3>
+                <p>Layanan Pemesanan & Informasi Operasional CV Sinar Intan Sidayu</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon-box wa-bg">
+                        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                    </div>
+                    <h4>WhatsApp CS</h4>
+                    <p>Fast response layanan pemesanan grosir & eceran.</p>
+                    <a href="https://wa.me/6285173100449" target="_blank" class="btn-contact btn-wa">+62 851-7310-0449</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon-box ig-bg">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"/></svg>
+                    </div>
+                    <h4>Instagram</h4>
+                    <p>Informasi galeri produksi dan kabar harian pabrik.</p>
+                    <a href="https://instagram.com" target="_blank" class="btn-contact btn-ig">@sinarintansidayu</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon-box gmail-bg">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <h4>Email Perusahaan</h4>
+                    <p>Kemitraan, pengadaan B2B, dan surat penawaran.</p>
+                    <a href="mailto:info@sinarintansidayu.com" class="btn-contact btn-gmail">Kirim Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon-box map-bg">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <h4>Pabrik & Gudang</h4>
+                    <p>Kabupaten Serang, Banten, Indonesia.</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-contact btn-map">Petunjuk Lokasi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 CV Sinar Intan Sidayu (SIS). Hak Cipta Dilindungi Undang-Undang.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Fungsionalitas Switch Tab SPA
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            const selectedTab = document.getElementById('tab-' + tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fungsionalitas Filter Pencarian Tabel
+        function filterTable() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("stockTable");
+            const tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                let showRow = false;
+                const tds = tr[i].getElementsByTagName("td");
+                for (let j = 0; j < tds.length; j++) {
+                    if (tds[j]) {
+                        const txtValue = tds[j].textContent || tds[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            showRow = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = showRow ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
